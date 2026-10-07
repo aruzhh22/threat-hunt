@@ -69,7 +69,7 @@ and process.name: ("bash" or "sh" or "zsh" or "powershell.exe" or "cmd.exe" or "
 and process.command_line: (*.ssh* or *hosts.yml* or *credentials*)
 ```
 
-Notes: wildcards only work **outside** quotes in KQL. `*.ssh*` is used instead of a path with backslashes because `\` is an escape character in KQL and `~` is expanded by the shell before logging. Field values can be case-sensitive depending on the index mapping, so use the `.caseless` subfield if your mapping has it or add case variants.
+Notes: wildcards only work **outside** quotes in KQL. `*.ssh*` is used instead of a path with backslashes because `\` is an escape character in KQL and `~` is expanded by the shell before logging. In the test index the process fields use a lowercase normalizer, so queries are case-insensitive; in other mappings these fields may be case-sensitive.
 
 ### 4.2 Splunk (SPL, Sysmon Event ID 1)
 
@@ -120,8 +120,10 @@ H1 (suspicious PowerShell): 2 hits - screenshot 1
 H2 (VS Code credential access): 4 hits - screenshot 2
 
 
-<img width="1920" height="1140" alt="Снимок экрана 2026-10-07 181315" src="https://github.com/user-attachments/assets/3105e1ef-d960-4a71-8397-db2c4c66e83d" />
-<img width="1920" height="1140" alt="Снимок экрана 2026-10-07 181342" src="https://github.com/user-attachments/assets/3dd7089c-a241-45ca-9384-820a254a98ac" />
+<img width="1920" height="1140" alt="Снимок экрана 2026-10-07 184245" src="https://github.com/user-attachments/assets/8675a387-94cb-4d24-aeb1-fa85fc097e19" />
+
+<img width="1920" height="1140" alt="Снимок экрана 2026-10-07 184214" src="https://github.com/user-attachments/assets/739a7a8e-67fa-4dea-9c71-108d1b8b1b5d" />
+
 
 
 ---
@@ -133,7 +135,7 @@ H2 (VS Code credential access): 4 hits - screenshot 2
 | Hypothesis confirmed? | Not applicable on synthetic data | Not applicable on synthetic data |
 | Hits / true / false positives | 2 / 1 / 1 | 4 / 3 / 1 |
 | Tuning applied | Allowlist SCCM parent (`ccmexec.exe`) | Require `curl`/network activity in the command, or known-developer allowlist |
-| Detection rule created | Candidate (Sigma, Week 3 backlog) | Candidate (Sigma, Week 3 backlog) |
+| Detection rule created | Candidate  | Candidate (Sigma, Week 3 backlog) |
 | ATT&CK coverage | T1059.001 | T1195.002, T1552.001/.004 |
 
 ---
