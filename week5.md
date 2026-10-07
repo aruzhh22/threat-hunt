@@ -112,9 +112,17 @@ Because no real endpoint telemetry was available, the hunt logic was checked aga
 
 What it shows: both rules catch the planted malicious events, and each produces one realistic false positive that needs triage by parent process, user and whether `curl`/network activity follows. Not matched on purpose: PowerShell reading `.ssh\config` started from `explorer.exe` (parent is not VS Code), and ordinary `npm run build` / `git status` from VS Code.
 
-### 5.2 Execution in ELK / Splunk (to add)
+### 5.2 Execution in Elastic (Kibana Discover)
 
-> **TODO before submission:** load the sample data into Elastic (see `elastic_setup.md`: Elastic Cloud trial, Kibana Dev Tools, Discover), run the KQL queries from §4.1, and add screenshots of each query and its hit table here (expected: H1 = 2 hits, H2 = 4 hits). Until this is done, the hunts are validated on a sample but not executed on a SIEM. Delete this note once the screenshots are added.
+The synthetic sample (sample_bulk.ndjson) was loaded into an Elastic Cloud deployment (index `hunt-sample`) and the KQL queries from §4.1 were run in Discover.
+
+H1 (suspicious PowerShell): 2 hits - screenshot 1
+H2 (VS Code credential access): 4 hits - screenshot 2
+
+
+<img width="1920" height="1140" alt="Снимок экрана 2026-10-07 181315" src="https://github.com/user-attachments/assets/3105e1ef-d960-4a71-8397-db2c4c66e83d" />
+<img width="1920" height="1140" alt="Снимок экрана 2026-10-07 181342" src="https://github.com/user-attachments/assets/3dd7089c-a241-45ca-9384-820a254a98ac" />
+
 
 ---
 
