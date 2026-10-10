@@ -148,9 +148,5 @@ H2 (VS Code credential access): 4 hits - screenshot 2
 
 ---
 
-## 8. Recommended Reading and Sources
-
-- Microsoft Threat Hunting Guide; Phillip Smith, *Practical Threat Hunting* (as listed in the course syllabus - verify exact titles and editions before citing)
-- SANS Threat Hunting Summit talks
-- MITRE ATT&CK: [T1059.001](https://attack.mitre.org/techniques/T1059/001/), [T1552.001](https://attack.mitre.org/techniques/T1552/001/), [T1552.004](https://attack.mitre.org/techniques/T1552/004/), [T1195.002](https://attack.mitre.org/techniques/T1195/002/)
-- Project sources for the Nx Console case: see Week 2
+Use of AI
+Generative AI was used to help organize and edit the written explanation of the threat-hunting concepts, hypotheses, and query logic. It also helped clarify technical terms and improve wording. The project team reviewed the material, selected the hunt scenarios, and checked the queries against the synthetic sample and in Kibana Discover. AI was not used to access organizational systems or real endpoint data. The reported results come from the synthetic test dataset and Elastic run described in this report.
