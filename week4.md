@@ -47,7 +47,7 @@ This is a deliberate finding, not a gap we're hiding: **MITRE ATT&CK Enterprise 
 
 **Implication for the project:** the digital track (Case Study 2) can be fully instrumented and detected using ATT&CK-aligned tooling (which is exactly what Week 3's MISP/KQL setup does). The physical track (Case Study 1) cannot be - it needs a **parallel physical-security control framework** (e.g., badge/ACS behavioral rules, like the "impossible travel for badges" indicator already defined in Week 3) instead of relying on ATT&CK coverage. This is a concrete argument for why the project's Week 3 MISP model treats physical indicators as a first-class, separately-defined category rather than trying to force them into ATT&CK's vocabulary.
 
----
+--
 
 ## 5. Recommended Reading
 
