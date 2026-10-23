@@ -40,7 +40,8 @@ Write-Output "T1059.001 test"
 **Expected result:** PowerShell prints the test message.  
 **Observed result:** The console displayed `T1059.001 test` and returned to the prompt.
 
-![Figure 1. Encoded PowerShell command and the resulting test message.](images/01_encoded_powershell.png)
+<img width="465" height="118" alt="Screenshot 2026-10-23 at 21 27 53" src="https://github.com/user-attachments/assets/5cd52eaa-cc63-465a-94df-a72c05d5936b" />
+
 
 *Figure 1. Successful execution of the harmless encoded command.*
 
@@ -57,7 +58,8 @@ Get-Process
 **Expected result:** PowerShell lists running processes.  
 **Observed result:** The console displayed a process table with columns including `Handles`, `NPM(K)`, `PM(K)`, `WS(K)`, `CPU(s)`, `Id`, `SI`, and `ProcessName`. Visible examples include `ACCSvc`, `AggregatorHost`, and `backgroundTaskHost`.
 
-![Figure 2. Get-Process command and a visible portion of its output.](images/02_process_discovery.png)
+<img width="463" height="261" alt="Screenshot 2026-10-23 at 21 28 14" src="https://github.com/user-attachments/assets/91c9c7e7-b80c-4247-823b-5f7024cdeec9" />
+
 
 *Figure 2. Process enumeration. The screenshot captures a portion of the list; it does not establish the total process count.*
 
@@ -80,7 +82,8 @@ acerswift3\ернар имаханов
 
 The command then returned to the PowerShell prompt.
 
-![Figure 3. whoami command and the returned account name.](images/03_user_discovery.png)
+<img width="424" height="113" alt="Screenshot 2026-10-23 at 21 28 38" src="https://github.com/user-attachments/assets/54ce7d5a-31c0-4e0d-8484-2308e55456a0" />
+
 
 *Figure 3. Identification of the account running the command.*
 
