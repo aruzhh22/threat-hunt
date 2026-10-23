@@ -7,7 +7,7 @@
 
 ## 1. Overview
 
-In Week 5 we wrote our own hunting queries from a hypothesis. This week we start from the other side: a **published, peer-reviewed analytic** from MITRE's Cyber Analytics Repository (car.mitre.org), and we check how it behaves in our environment.
+In Week 5 we wrote our own hunting queries from a hypothesis. This week we start from the other side: a published analytic from MITRE’s Cyber Analytics Repository (car.mitre.org), and we check how it behaves in our environment.
 
 CAR gives a platform-neutral description of a detection idea (pseudocode, data model fields, ATT&CK coverage) plus example implementations for several tools. Our job is to translate it into our own stack and test it.
 
@@ -124,7 +124,7 @@ and not process.parent.name: ("explorer.exe" or "ccmexec.exe")
 | **T1059.001** - Command and Scripting Interpreter: PowerShell | Execution | Primary technique. This is the behavior CAR-2014-04-003 detects (coverage level: High). |
 | **T1059.001** | Defense Evasion | Secondary mapping in CAR (coverage level: Moderate). PowerShell can hide commands that are monitored elsewhere. |
 | **T1204.002** - User Execution: Malicious File | Execution | Context for the Word → PowerShell hit. A user opens a document and the macro starts PowerShell. The analytic sees the second half of that chain, not the user action itself. *(Our own mapping, not a CAR mapping.)* |
-| **T1195.002** - Supply Chain Compromise | Initial Access | Context for the `code.exe` hits only, if the command line turns out to read credentials (Week 2 Nx Console case, Week 5 H2). *(Our own mapping, not a CAR mapping.)* |
+| **T1195.002** - Supply Chain Compromise: Compromise Software Supply Chain | Initial Access | Context for the `code.exe` hits only, if the command line turns out to read credentials (Week 2 Nx Console case, Week 5 H2). *(Our own mapping, not a CAR mapping.)* |
 
 Kill Chain link (Week 4): this analytic sits at the **Exploitation / Installation** stages, after delivery has already happened. It does not see reconnaissance, weaponization or delivery.
 
